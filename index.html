@@ -1,167 +1,242 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Malla Interactiva Odontología – Anual</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #fceeff;
-      padding: 1rem;
-      overflow-x: auto;
-    }
-    h1 {
-      color: #8a00a0;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.75rem;
-      text-align: center;
-      border-radius: 0.5rem;
-    }
-    th {
-      background-color: #e6ccf2;
-    }
-    td {
-      background-color: #f9e8ff;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    td.aprobado {
-      background-color: #ff7fef;
-      color: white;
-    }
-    td.bloqueado {
-      background-color: #dddddd;
-      color: #999;
-      pointer-events: none;
-      cursor: not-allowed;
-    }
-  </style>
-</head>
-<body>
-  <h1>Malla Interactiva Odontología</h1>
+<!-- Malla Odontología: Años 1 a 12 -->
+<div class="anio">
+  <h2>1° Año</h2>
   <table>
-    <thead>
-      <tr><th>Semestre 1</th><th>Semestre 2</th></tr>
-    </thead>
-    <tbody>
-      <!-- Año 1 -->
-      <tr>
-        <td data-id="Anatomía Humana">Anatomía Humana</td>
-        <td data-id="Anatomía Bucomaxilofacial" data-prerequisitos="Anatomía Humana">Anatomía Bucomaxilofacial</td>
-      </tr>
-      <tr>
-        <td data-id="Biología Celular">Biología Celular</td>
-        <td data-id="Bioquímica" data-prerequisitos="Biología Celular">Bioquímica</td>
-      </tr>
-      <tr>
-        <td data-id="Odontología General">Odontología General</td>
-        <td data-id="Odontología Integrada I">Odontología Integrada I</td>
-      </tr>
-      <tr>
-        <td data-id="Salud Pública">Salud Pública</td>
-        <td data-id="Epidemiología" data-prerequisitos="Salud Pública">Epidemiología</td>
-      </tr>
-
-      <!-- Año 2 -->
-      <tr>
-        <td colspan="2" data-id="Odontología Integrada II" data-prerequisitos="Odontología Integrada I">Odontología Integrada II</td>
-      </tr>
-      <tr>
-        <td data-id="Farmacología" data-prerequisitos="Bioquímica">Farmacología</td>
-        <td data-id="Patología General" data-prerequisitos="Bioquímica">Patología General</td>
-      </tr>
-      <tr>
-        <td data-id="Fisiología" data-prerequisitos="Bioquímica">Fisiología</td>
-        <td data-id="Patología Oral" data-prerequisitos="Patología General">Patología Oral</td>
-      </tr>
-
-      <!-- Año 3 -->
-      <tr>
-        <td colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría I" data-prerequisitos="Odontología Integrada II">Odontología Integral del Adulto y Odontogeriatría I</td>
-      </tr>
-      <tr>
-        <td data-id="Radiología" data-prerequisitos="Anatomía Bucomaxilofacial">Radiología</td>
-        <td data-id="Periodoncia" data-prerequisitos="Odontología Integrada II">Periodoncia</td>
-      </tr>
-      <tr>
-        <td data-id="Endodoncia" data-prerequisitos="Odontología Integrada II">Endodoncia</td>
-        <td data-id="Odontología Legal y Forense" data-prerequisitos="Odontología Integrada II">Odontología Legal y Forense</td>
-      </tr>
-
-      <!-- Año 4 -->
-      <tr>
-        <td colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría II" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría I">Odontología Integral del Adulto y Odontogeriatría II</td>
-      </tr>
-      <tr>
-        <td data-id="Odontología Preventiva y Comunitaria" data-prerequisitos="Salud Pública">Odontología Preventiva y Comunitaria</td>
-        <td data-id="Odontología Basada en la Evidencia y Salud Digital" data-prerequisitos="Epidemiología">Odontología Basada en la Evidencia y Salud Digital</td>
-      </tr>
-      <tr>
-        <td data-id="Cirugía Bucal I" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría I">Cirugía Bucal I</td>
-        <td data-id="Cirugía Bucal II" data-prerequisitos="Cirugía Bucal I">Cirugía Bucal II</td>
-      </tr>
-
-      <!-- Año 5 -->
-      <tr>
-        <td colspan="2" data-id="Odontología Integral del Niño y Ortodoncia I" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría II">Odontología Integral del Niño y Ortodoncia I</td>
-      </tr>
-      <tr>
-        <td data-id="Diagnóstico y Tratamiento Interdisciplinario I" data-prerequisitos="Cirugía Bucal II">Diagnóstico y Tratamiento Interdisciplinario I</td>
-        <td data-id="Diagnóstico y Tratamiento Interdisciplinario II" data-prerequisitos="Diagnóstico y Tratamiento Interdisciplinario I">Diagnóstico y Tratamiento Interdisciplinario II</td>
-      </tr>
-
-      <!-- Año 6 -->
-      <tr>
-        <td colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría III" data-prerequisitos="Odontología Integral del Niño y Ortodoncia I">Odontología Integral del Adulto y Odontogeriatría III</td>
-      </tr>
-      <tr>
-        <td colspan="2" data-id="Odontología Integral del Niño y Ortodoncia II" data-prerequisitos="Odontología Integral del Niño y Ortodoncia I">Odontología Integral del Niño y Ortodoncia II</td>
-      </tr>
-    </tbody>
+    <tr>
+      <td class="ramo" data-id="Biología Celular y Molecular" data-prerequisitos="">
+        Biología Celular y Molecular
+      </td>
+      <td class="ramo" data-id="Química General" data-prerequisitos="">
+        Química General
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo" data-id="Anatomía Humana" data-prerequisitos="">
+        Anatomía Humana
+      </td>
+      <td class="ramo" data-id="Odontología en la Sociedad" data-prerequisitos="">
+        Odontología en la Sociedad
+      </td>
+    </tr>
   </table>
+</div>
 
-  <script>
-    const ramos = document.querySelectorAll('td');
+<div class="anio">
+  <h2>2° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo" data-id="Anatomía Bucomaxilofacial" data-prerequisitos="Anatomía Humana">
+        Anatomía Bucomaxilofacial
+      </td>
+      <td class="ramo" data-id="Histología Bucal" data-prerequisitos="Biología Celular y Molecular">
+        Histología Bucal
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo" data-id="Microbiología" data-prerequisitos="Biología Celular y Molecular">
+        Microbiología
+      </td>
+      <td class="ramo" data-id="Preclínico de Operatoria" data-prerequisitos="Química General">
+        Preclínico de Operatoria
+      </td>
+    </tr>
+  </table>
+</div>
 
-    function cargarEstado() {
-      ramos.forEach(ramo => {
-        const id = ramo.dataset.id;
-        const prereqs = ramo.dataset.prerequisitos?.split(',') || [];
-        const aprobado = localStorage.getItem(id) === 'true';
+<div class="anio">
+  <h2>3° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo" data-id="Patología General" data-prerequisitos="Microbiología">
+        Patología General
+      </td>
+      <td class="ramo" data-id="Fisiología" data-prerequisitos="Biología Celular y Molecular">
+        Fisiología
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo" data-id="Farmacología General" data-prerequisitos="Fisiología">
+        Farmacología General
+      </td>
+      <td class="ramo" data-id="Preclínico de Prótesis" data-prerequisitos="Preclínico de Operatoria">
+        Preclínico de Prótesis
+      </td>
+    </tr>
+  </table>
+</div>
 
-        // Revisa si los prerrequisitos están aprobados
-        const habilitado = prereqs.every(pr => localStorage.getItem(pr) === 'true');
+<div class="anio">
+  <h2>4° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo" data-id="Odontología Integrada I" data-prerequisitos="Preclínico de Operatoria">
+        Odontología Integrada I
+      </td>
+      <td class="ramo" data-id="Radiología Odontológica I" data-prerequisitos="Anatomía Bucomaxilofacial">
+        Radiología Odontológica I
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo" data-id="Odontopediatría I" data-prerequisitos="Odontología Integrada I">
+        Odontopediatría I
+      </td>
+      <td class="ramo" data-id="Salud Pública y Odontología Social" data-prerequisitos="Odontología en la Sociedad">
+        Salud Pública y Odontología Social
+      </td>
+    </tr>
+  </table>
+</div>
 
-        ramo.classList.remove('aprobado', 'bloqueado');
+<div class="anio">
+  <h2>5° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría I" data-prerequisitos="Odontología Integrada I">
+        Odontología Integral del Adulto y Odontogeriatría I
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo" data-id="Periodoncia" data-prerequisitos="Odontología Integrada I">
+        Periodoncia
+      </td>
+      <td class="ramo" data-id="Endodoncia" data-prerequisitos="Odontología Integrada I">
+        Endodoncia
+      </td>
+    </tr>
+  </table>
+</div>
 
-        if (!habilitado && prereqs.length > 0) {
-          ramo.classList.add('bloqueado');
-        } else if (aprobado) {
-          ramo.classList.add('aprobado');
-        }
-      });
-    }
+<div class="anio">
+  <h2>6° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo" data-id="Odontología Legal y Forense" data-prerequisitos="Salud Pública y Odontología Social">
+        Odontología Legal y Forense
+      </td>
+      <td class="ramo" data-id="Odontología Basada en la Evidencia y Salud Digital" data-prerequisitos="Salud Pública y Odontología Social">
+        Odontología Basada en la Evidencia y Salud Digital
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo" data-id="Imagenología Avanzada" data-prerequisitos="Radiología Odontológica I">
+        Imagenología Avanzada
+      </td>
+      <td class="ramo" data-id="Cirugía Bucal" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría I">
+        Cirugía Bucal
+      </td>
+    </tr>
+  </table>
+</div>
 
-    function cambiarEstado(e) {
-      const id = e.target.dataset.id;
-      const aprobado = e.target.classList.contains('aprobado');
-      localStorage.setItem(id, !aprobado);
-      cargarEstado();
-    }
+<!-- Resto de años del 7 al 12 -->
+<div class="anio">
+  <h2>7° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Odontología Integral del Niño y Ortodoncia I" data-prerequisitos="Odontología Integral del Niño y Ortodoncia II">
+        Odontología Integral del Niño y Ortodoncia I
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría II" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría I">
+        Odontología Integral del Adulto y Odontogeriatría II
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo" data-id="Farmacología Clínica Odontológica" data-prerequisitos="Farmacología General">
+        Farmacología Clínica Odontológica
+      </td>
+      <td class="ramo" data-id="Radiología Odontológica II" data-prerequisitos="Radiología Odontológica I">
+        Radiología Odontológica II
+      </td>
+    </tr>
+  </table>
+</div>
 
-    ramos.forEach(ramo => {
-      ramo.addEventListener('click', cambiarEstado);
-    });
+<div class="anio">
+  <h2>8° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Odontología Integral del Niño y Ortodoncia I" data-prerequisitos="Odontología Integral del Niño y Ortodoncia II">
+        (continuación) Odontología Integral del Niño y Ortodoncia I
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría II" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría I">
+        (continuación) Odontología Integral del Adulto y Odontogeriatría II
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo" data-id="Gestión Odontológica" data-prerequisitos="Odontología Social y Salud Pública">
+        Gestión Odontológica
+      </td>
+      <td class="ramo" data-id="Odontopediatría II" data-prerequisitos="Odontopediatría I">
+        Odontopediatría II
+      </td>
+    </tr>
+  </table>
+</div>
 
-    cargarEstado();
-  </script>
-</body>
-</html>
+<div class="anio">
+  <h2>9° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Odontología Integral del Niño y Ortodoncia II" data-prerequisitos="Odontología Integral del Niño y Ortodoncia I">
+        Odontología Integral del Niño y Ortodoncia II
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría III" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría II">
+        Odontología Integral del Adulto y Odontogeriatría III
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="anio">
+  <h2>10° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Odontología Integral del Niño y Ortodoncia II" data-prerequisitos="Odontología Integral del Niño y Ortodoncia I">
+        (continuación) Odontología Integral del Niño y Ortodoncia II
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría III" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría II">
+        (continuación) Odontología Integral del Adulto y Odontogeriatría III
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="anio">
+  <h2>11° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Internado Odontología Integral del Adulto III" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría III">
+        Internado Odontología Integral del Adulto III
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Internado Odontología Integral del Niño II" data-prerequisitos="Odontología Integral del Niño y Ortodoncia II">
+        Internado Odontología Integral del Niño II
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="anio">
+  <h2>12° Año</h2>
+  <table>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Internado Odontología Integral del Adulto III" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría III">
+        (continuación) Internado Odontología Integral del Adulto III
+      </td>
+    </tr>
+    <tr>
+      <td class="ramo anual" colspan="2" data-id="Internado Odontología Integral del Niño II" data-prerequisitos="Odontología Integral del Niño y Ortodoncia II">
+        (continuación) Internado Odontología Integral del Niño II
+      </td>
+    </tr>
+  </table>
+</div>
