@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Malla Interactiva Odontología – Anual</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fceeff;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    h1 {
+      color: #8a00a0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: center;
+      border-radius: 0.5rem;
+    }
+    th {
+      background-color: #e6ccf2;
+    }
+    td {
+      background-color: #f9e8ff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    td.aprobado {
+      background-color: #ff7fef;
+      color: white;
+    }
+    td.bloqueado {
+      background-color: #dddddd;
+      color: #999;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva Odontología</h1>
+  <table>
+    <thead>
+      <tr><th>Semestre 1</th><th>Semestre 2</th></tr>
+    </thead>
+    <tbody>
+      <!-- Año 1 -->
+      <tr>
+        <td data-id="Anatomía Humana">Anatomía Humana</td>
+        <td data-id="Anatomía Bucomaxilofacial" data-prerequisitos="Anatomía Humana">Anatomía Bucomaxilofacial</td>
+      </tr>
+      <tr>
+        <td data-id="Biología Celular">Biología Celular</td>
+        <td data-id="Bioquímica" data-prerequisitos="Biología Celular">Bioquímica</td>
+      </tr>
+      <tr>
+        <td data-id="Odontología General">Odontología General</td>
+        <td data-id="Odontología Integrada I">Odontología Integrada I</td>
+      </tr>
+      <tr>
+        <td data-id="Salud Pública">Salud Pública</td>
+        <td data-id="Epidemiología" data-prerequisitos="Salud Pública">Epidemiología</td>
+      </tr>
+
+      <!-- Año 2 -->
+      <tr>
+        <td colspan="2" data-id="Odontología Integrada II" data-prerequisitos="Odontología Integrada I">Odontología Integrada II</td>
+      </tr>
+      <tr>
+        <td data-id="Farmacología" data-prerequisitos="Bioquímica">Farmacología</td>
+        <td data-id="Patología General" data-prerequisitos="Bioquímica">Patología General</td>
+      </tr>
+      <tr>
+        <td data-id="Fisiología" data-prerequisitos="Bioquímica">Fisiología</td>
+        <td data-id="Patología Oral" data-prerequisitos="Patología General">Patología Oral</td>
+      </tr>
+
+      <!-- Año 3 -->
+      <tr>
+        <td colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría I" data-prerequisitos="Odontología Integrada II">Odontología Integral del Adulto y Odontogeriatría I</td>
+      </tr>
+      <tr>
+        <td data-id="Radiología" data-prerequisitos="Anatomía Bucomaxilofacial">Radiología</td>
+        <td data-id="Periodoncia" data-prerequisitos="Odontología Integrada II">Periodoncia</td>
+      </tr>
+      <tr>
+        <td data-id="Endodoncia" data-prerequisitos="Odontología Integrada II">Endodoncia</td>
+        <td data-id="Odontología Legal y Forense" data-prerequisitos="Odontología Integrada II">Odontología Legal y Forense</td>
+      </tr>
+
+      <!-- Año 4 -->
+      <tr>
+        <td colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría II" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría I">Odontología Integral del Adulto y Odontogeriatría II</td>
+      </tr>
+      <tr>
+        <td data-id="Odontología Preventiva y Comunitaria" data-prerequisitos="Salud Pública">Odontología Preventiva y Comunitaria</td>
+        <td data-id="Odontología Basada en la Evidencia y Salud Digital" data-prerequisitos="Epidemiología">Odontología Basada en la Evidencia y Salud Digital</td>
+      </tr>
+      <tr>
+        <td data-id="Cirugía Bucal I" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría I">Cirugía Bucal I</td>
+        <td data-id="Cirugía Bucal II" data-prerequisitos="Cirugía Bucal I">Cirugía Bucal II</td>
+      </tr>
+
+      <!-- Año 5 -->
+      <tr>
+        <td colspan="2" data-id="Odontología Integral del Niño y Ortodoncia I" data-prerequisitos="Odontología Integral del Adulto y Odontogeriatría II">Odontología Integral del Niño y Ortodoncia I</td>
+      </tr>
+      <tr>
+        <td data-id="Diagnóstico y Tratamiento Interdisciplinario I" data-prerequisitos="Cirugía Bucal II">Diagnóstico y Tratamiento Interdisciplinario I</td>
+        <td data-id="Diagnóstico y Tratamiento Interdisciplinario II" data-prerequisitos="Diagnóstico y Tratamiento Interdisciplinario I">Diagnóstico y Tratamiento Interdisciplinario II</td>
+      </tr>
+
+      <!-- Año 6 -->
+      <tr>
+        <td colspan="2" data-id="Odontología Integral del Adulto y Odontogeriatría III" data-prerequisitos="Odontología Integral del Niño y Ortodoncia I">Odontología Integral del Adulto y Odontogeriatría III</td>
+      </tr>
+      <tr>
+        <td colspan="2" data-id="Odontología Integral del Niño y Ortodoncia II" data-prerequisitos="Odontología Integral del Niño y Ortodoncia I">Odontología Integral del Niño y Ortodoncia II</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const ramos = document.querySelectorAll('td');
+
+    function cargarEstado() {
+      ramos.forEach(ramo => {
+        const id = ramo.dataset.id;
+        const prereqs = ramo.dataset.prerequisitos?.split(',') || [];
+        const aprobado = localStorage.getItem(id) === 'true';
+
+        // Revisa si los prerrequisitos están aprobados
+        const habilitado = prereqs.every(pr => localStorage.getItem(pr) === 'true');
+
+        ramo.classList.remove('aprobado', 'bloqueado');
+
+        if (!habilitado && prereqs.length > 0) {
+          ramo.classList.add('bloqueado');
+        } else if (aprobado) {
+          ramo.classList.add('aprobado');
+        }
+      });
+    }
+
+    function cambiarEstado(e) {
+      const id = e.target.dataset.id;
+      const aprobado = e.target.classList.contains('aprobado');
+      localStorage.setItem(id, !aprobado);
+      cargarEstado();
+    }
+
+    ramos.forEach(ramo => {
+      ramo.addEventListener('click', cambiarEstado);
+    });
+
+    cargarEstado();
+  </script>
+</body>
+</html>
